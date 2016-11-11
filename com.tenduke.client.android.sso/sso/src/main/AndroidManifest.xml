@@ -1,0 +1,10 @@
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tenduke.client.android.sso">
+
+    <application android:allowBackup="true" android:label="@string/tenduke_sso_lib_name" android:supportsRtl="true">
+        <activity android:name="com.tenduke.client.android.sso.LoginActivity"/>
+        <activity android:name="com.tenduke.client.android.sso.LogoutActivity"/>
+    </application>
+
+</manifest>

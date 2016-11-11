@@ -1,0 +1,28 @@
+<resources>
+
+    <string name="app_name">Tenduke SSO Sample</string>
+
+    <string name="action_create">Create</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_groups">Groups</string>
+    <string name="action_login">Login</string>
+    <string name="action_logout">Logout</string>
+    <string name="action_profile">Profile</string>
+    <string name="action_roles">Roles</string>
+    <string name="action_save">Save</string>
+    <string name="action_users">Users</string>
+
+    <string name="toast_created">Created</string>
+    <string name="toast_updated">Updated</string>
+
+
+    <string name="hint_group_name">Name</string>
+    <string name="hint_role_description">Description</string>
+    <string name="hint_role_name">Name</string>
+    <string name="hint_user_description">Description</string>
+    <string name="hint_user_email">Email</string>
+    <string name="hint_user_first_name">First name</string>
+    <string name="hint_user_last_name">Last name</string>
+
+
+</resources>

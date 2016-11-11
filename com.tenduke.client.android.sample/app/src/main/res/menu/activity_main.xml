@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+>
+
+    <item
+        android:id="@+id/action_users"
+        android:icon="@drawable/ic_group_white_48dp"
+        android:title="@string/action_users"
+        android:visible="false"
+        app:showAsAction="never"
+    />
+    <item
+        android:id="@+id/action_groups"
+        android:icon="@drawable/ic_group_white_48dp"
+        android:title="@string/action_groups"
+        android:visible="false"
+        app:showAsAction="never"
+    />
+    <item
+        android:id="@+id/action_roles"
+        android:icon="@drawable/ic_group_white_48dp"
+        android:title="@string/action_roles"
+        android:visible="false"
+        app:showAsAction="never"
+    />
+
+</menu>

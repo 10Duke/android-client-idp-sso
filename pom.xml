@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <name>com.tenduke.client.android</name>
+  <groupId>com.tenduke.client</groupId>
+  <artifactId>android</artifactId>
+  <version>1</version>
+
+  <packaging>pom</packaging>
+ 
+  <modules>
+    <module>com.tenduke.client.android.android-utils</module>
+    <module>com.tenduke.client.android.security</module>
+    <module>com.tenduke.client.android.storage</module>
+    <module>com.tenduke.client.android.api</module>
+  </modules>
+</project>
