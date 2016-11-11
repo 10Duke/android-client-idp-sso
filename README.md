@@ -13,7 +13,7 @@ Please see [BUILDING.md](BUILDING.md)
 ## Dependencies
 
 Android client depends on 10Duke Java client libraries and needs same runtime dependencies. Please
-see the [10Duke Java-client core libraries](../java-client-core).
+see the [10Duke Java-client core libraries](https://github.com/10Duke/java-client-core).
 
 For example, using Gson as JSON-serializer, the dependencies could be:
 
