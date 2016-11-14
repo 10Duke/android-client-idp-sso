@@ -4,6 +4,10 @@ This repository provides Android-library for Single-Sign-On -functionality.
 
 For working example, please see the artifact [com.tenduke.client.android.sample](./com.tenduke.client.android.sample).
 
+Looking for the REST-API client-libraries? The Java-client libraries are designed to work with Android:
+* [Java-client core libraries](https://github.com/10Duke/java-client-core)
+* [Java-client for 10Duke Identity Provider REST API](https://github.com/10Duke/java-client-idp)
+
 
 ## Building the project
 
@@ -37,6 +41,89 @@ compile 'com.squareup.okhttp3:okhttp:3.4.1'
 compile 'com.squareup.retrofit2:retrofit:2.1.0'
 compile 'com.squareup.retrofit2:converter-gson:2.1.0'
 compile 'com.google.code.gson:gson:2.7'
+```
+
+## Example usage
+
+### Example login
+
+```java
+public class MyActivity extends Activity {
+
+    protected static final int REQUEST_CODE_LOGIN = 2;
+
+    /** Starts the Login-activity.
+     *
+     */
+    public void login () {
+        startActivityForResult (
+                LoginActivity.createIntent(
+                        this,
+                        getString(R.string.action_login),   // Title on the login action bar
+                        "https://vslidp.10duke.com",        // URL of the SSO-service. Replace with correct value
+                        "android_sample",                   // Client ID. Replace with correct value.
+                        null                                // No nonce in this example
+                ),
+                REQUEST_CODE_LOGIN
+        );
+    }
+
+    /** Handle the login-result:
+     */
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        //
+        super.onActivityResult(requestCode, resultCode, data);
+        //
+        switch (requestCode) {
+
+            case REQUEST_CODE_LOGIN:
+                // Handle the login results here
+                break;
+        }
+    }
+}
+```
+
+### Example logout
+
+```java
+public class MyActivity extends Activity {
+
+    protected static final int REQUEST_CODE_LOGOUT = 1;
+
+    /** Starts the Logout-activity.
+     *
+     */
+    protected void logout (@NonNull final ApiCredentials credentials) {
+        //
+        startActivityForResult (
+                LogoutActivity.createIntent(
+                        this,
+                        getString(R.string.action_logout),          // Title on the logout action bar
+                        "https://vslidp.10duke.com",                // URL of the SSO-service. Replace with correct value
+                        "https://localhost/oauth2_callback.html",   // Callback URL. NOTE: This must be configured in the
+                                                                    // IdentityProvider.
+                        credentials),                               // Credentials to log out
+                REQUEST_CODE_LOGOUT
+        );
+    }
+
+    /** Handle the logout-result:
+     */
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        //
+        super.onActivityResult(requestCode, resultCode, data);
+        //
+        switch (requestCode) {
+
+            case REQUEST_CODE_LOGOUT:
+                // Handle the logout results here
+                break;
+        }
+    }
+}
 ```
 
 
