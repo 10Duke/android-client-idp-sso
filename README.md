@@ -2,7 +2,7 @@
 
 This repository provides Android-library for Single-Sign-On -functionality.
 
-For working example, please see the artifact [com.tenduke.client.android.sample](./com.tenduke.client.android.sample).
+For working example, please see project [android-client-sample](https://github.com/10Duke/android-client-sample).
 
 Looking for the REST-API client-libraries? The Java-client libraries are designed to work with Android:
 * [Java-client core libraries](https://github.com/10Duke/java-client-core)
@@ -140,22 +140,10 @@ The project provides several small artifacts. The following artifacts are provid
   `ApiCredential`s.
 * `com.tenduke.client.android.sso`: Single-Sign-On API. This is an .aar-archive: See `build.gradle`
   for an example how to declare dependency to this archive.
-* `com.tenduke.client.android.sample`: Sample Android application
 * `com.tenduke.client.android.tests`: For running instrumented tests
 
 Of these only `com.tenduke.client.android.sso` is likely to be required. The other artifacts are not
 necessary, if you don't need the functionality or you plan to implement the functionality yourself.
-
-See the sample-application for examples of how to:
-
-* Declare the dependencies (`build.gradle` in module `app`)
-* How to initialize the APIs (class `com.tenduke.client.android.sample.singletons.Apis`)
-* How to use Login/Logout (e.g. methods `login()`, `onActivityResult()` and `handleLoginResult()` in
-  class `BaseActivity`)
-* How to use the REST APIs (these are slightly invisible, as the simple crud-framework does most of
-  the work, but see, e.g. methods `com.tenduke.client.android.sample.users.UserListFragment.Adapter.populate()`
-  and `com.tenduke.client.android.sample.users.UserDetailFragment.create()`)
-
 
 ## Using Login / Logout
 

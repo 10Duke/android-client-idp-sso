@@ -1,11 +1,19 @@
 # Building the 10Duke Android Client Libraries
 
-
-### Requirements
+## Requirements
 
 * JDK installed and in path
 * Maven installed and in path
-* 10Duke client libraries available in e.g. local Maven repository
+* 10Duke client libraries available in e.g. local Maven repository (see below)
+
+
+### Install 10Duke client libraries
+
+This project depends on [Java-client core libraries (java-client-core)](https://github.com/10Duke/java-client-core).
+Please follow the instructions on that repository.
+
+
+### Preparing the Android SDK
 
 If you already have Android SDK and necessary dependencies, make sure environment `ANDROID_HOME` is
 set properly.
@@ -21,13 +29,15 @@ API_LEVEL=24
 
 # Some following scripts may use SRC, which should point to the project root
 # Change the path below to point to the project root
-SRC=${HOME}/git/10duke/clientlibs/android
+SRC=${HOME}/git/github/10duke/android-client-idp-sso
 ```
 
 
-### Downloading and Setting Up The Android SDK
+## Downloading and Setting Up The Android SDK
 
-You can skip this part, if you have Android SDK and the necessary components.
+You can skip this part, if you have Android SDK and the necessary components. **NOTE**: Even if
+you have Android SDK, you may need to install additional Android SDK-components as per "Install
+needed dependencies" in following script.
 
 Following scripts install the necessary Android components in Linux environment.
 
@@ -60,7 +70,7 @@ cd ${ANDROID_HOME}/tools
 ```
 
 
-### Installing the Android SDK to local Maven repository:
+## Installing the Android SDK to local Maven repository:
 
 The project uses Android support annotations (`@NonNull`, `@Nullable`), and expects to find the
 support-annotations-${SUPPORT_VERSION} from Maven. Also, parts of the project depend directly on
@@ -85,21 +95,18 @@ mvn install:install-file \
 ```
 
 
-### Building
-
-In the project directory:
+## Building
 
 ```sh
+# cd to the project directory:
+cd ${SRC}
+
 # Build the maven-artifacts
 mvn clean install
 
 # Build the SSO .aar and install it to the local Maven repository
 cd com.tenduke.client.android.sso
 ./gradlew assembleDebug install
-
-# Build the sample-project
-cd ../com.tenduke.client.android.sample
-./gradlew assembleDebug
 
 # Build the test
 cd ../com.tenduke.client.android.tests
@@ -109,7 +116,7 @@ cd ../com.tenduke.client.android.tests
 This will be changed in future to work from single Gradle-script.
 
 
-### Running tests
+## Running tests
 
 ```sh
 cd ${ANDROID_HOME}/tools
@@ -126,7 +133,7 @@ cd ${SRC}/com.tenduke.client.android.tests
 ```
 
 
-### OS X troubleshooting
+## OS X troubleshooting
 
 If you get the following error when running Android emulator from command line:
 
